@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pyimp"
+version = "0.1.0"
+description = "Playing with python imports"
+authors = ["Pietro Zambelli <peter.zamb@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+pyimp = "pyimp.myfamily.main:main"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.0"
+pre-commit = "^3.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
