@@ -1,6 +1,12 @@
 import importlib
 
 try:
+    from brother import bro as imp_bro
+except Exception as e:
+    print("error: fail to import from dir")
+    print(f"{e}")
+
+try:
     from .. import fath as imp_fath
 except Exception as e:
     print("error: fail to import from above dir")
@@ -13,6 +19,17 @@ if __name__ == "__main__":
     try:
         bro_module = importlib.import_module("brother.bro")
         instance = bro_module.Brother()
+        instance.print()
+    except:
+        print("error: fail to import_module brother.bro")
+    else:
+        print("success!")
+    finally:
+        print("")
+
+    print("## import from lower dir ##")
+    try:
+        instance = imp_bro.Brother()
         instance.print()
     except:
         print("error: fail to import_module brother.bro")
