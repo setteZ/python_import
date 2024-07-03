@@ -1,14 +1,22 @@
+import sys
+from pathlib import Path
 import importlib
 
+curdir = Path(__file__).parent.absolute()
+
+print(curdir)
+sys.path.insert(0, curdir.as_posix())
+sys.path.insert(0, curdir.parent.as_posix())
+
 try:
-    from .. import fath as imp_fath
+    import fath as imp_fath
 except Exception as e:
     print("error: fail to import from above dir")
     print(f"{e}")
 
 if __name__ == "__main__":
     print("the main is running\n")
-    
+
     print("## import_module from lower dir ##")
     try:
         bro_module = importlib.import_module("brother.bro")
@@ -44,7 +52,7 @@ if __name__ == "__main__":
         print("success!")
     finally:
         print("")
-    
+
     print("## import from upper dir ##")
     try:
         module = imp_fath.Father()
