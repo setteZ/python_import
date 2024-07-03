@@ -15,7 +15,7 @@ except Exception as e:
 if __name__ == "__main__":
     print("the main is running\n")
     
-    print("## import_module from lower dir ##")
+    print("## import_module from dir ##")
     try:
         bro_module = importlib.import_module("brother.bro")
         instance = bro_module.Brother()
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     finally:
         print("")
 
-    print("## import from lower dir ##")
+    print("## import from dir ##")
     try:
         instance = imp_bro.Brother()
         instance.print()
