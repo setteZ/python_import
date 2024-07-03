@@ -62,7 +62,7 @@ if __name__ == "__main__":
     finally:
         print("")
     
-    print("## import from upper dir ##")
+    print("## import from above dir ##")
     try:
         module = imp_fath.Father()
         module.print()
